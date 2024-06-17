@@ -1,28 +1,28 @@
 = Validating the environment
 include::_attributes.adoc[]
 
-Now that you are connected to your workbench, let's make sure that all the expected services are responding properly in the cluster.
+これでワークベンチに接続できたので、クラスター内で想定されるすべてのサービスが適切に応答していることを確認しましょう。
 
-In your workbench:
+ワークベンチで:
 
-. In the left hand navigation menu, navigate to the folder called: `insurance-claim-processing/lab-materials/02`
+. 左側のナビゲーション メニューで、`insurance-claim-processing/lab-materials/02` というフォルダーに移動します。
 
-. Open the notebook called `02-04-validating.ipynb`
+. `02-04-validating.ipynb` というノートブックを開きます。
 
-. If you have never executed Cells in a Jupyter Notebook before, here is what you need to do:
+. Jupyter Notebook でセルを実行したことがない場合は、次の手順に従います。
 
-.. Click on the **Restart kernel and Run all Cells** link:
+.. [**カーネルを再起動してすべてのセルを実行**] リンクをクリックします:
 +
 [.bordershadow]
 image::02/02-04-restart-and-run.png[]
-.. Click **Restart** :
+.. [**再起動**] をクリックします:
 +
 [.bordershadow]
 image::02/02-04-restart-kernel.png[]
 +
-. Running these cells will confirm that all the lab-required services are responding.
+. これらのセルを実行すると、ラボに必要なすべてのサービスが応答していることが確認できます。
 
-The output should look as follows:
+出力は次のようになります:
 
 [source,console]
 ----
@@ -33,11 +33,11 @@ Success: LLM Service is reachable on llm.ic-shared-llm.svc.cluster.local:3000
 Success: ModelMesh is reachable on modelmesh-serving.ic-shared-img-det.svc.cluster.local:8033
 ----
 
-If the output of this notebook looks suspicious, please inform the people leading the lab.
+このノートブックの出力が疑わしい場合は、ラボを主導する担当者にお知らせください。
 
-== Overall view
+== 全体図
 
-This is a summarized visualization of how the environment is laid out.
+これは、環境がどのようにレイアウトされているかをまとめた視覚化です。
 
 [.bordershadow]
 image::02/ic-eng-diag.drawio.svg[]
