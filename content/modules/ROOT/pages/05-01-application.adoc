@@ -1,61 +1,61 @@
 = Application Overview
 include::_attributes.adoc[]
 
-== Architecture
+== アーキテクチャ
 
-Here is a simplified architecture diagram of the application:
+アプリケーションの簡略化されたアーキテクチャ図は次のとおりです:
 
 [.bordershadow]
+
 image::05/application-architecture.drawio.svg[]
 
+さまざまなコンポーネントは次のとおりです:
 
-The different components are:
+- **フロントエンド**: Patternfly フレームワーク (React、Typescript) を使用して開発されたアプリケーション自体で、ユーザーのブラウザーで実行されます。
+- **バックエンド**: OpenShift 上のコンテナーで実行される Python FastAPI アプリケーション。データベース、LLM、およびオブジェクト ストレージとの通信を処理します。REST API を公開することで、フロントエンドとの通信を処理します。
+- **データベース**: OpenShift 上のコンテナーで実行される PostgreSQL データベース。クレームを保存します。
+- **LLM**: クレームから情報を要約および抽出するために使用される言語モデル。バックエンドによって API を通じて使用されます。
+- **オブジェクト ストレージ**: S3 互換のオブジェクト ストレージ。クレーム画像を保存します。
 
-- The **frontend**: the application itself, developed using the Patternfly framework (React, Typescript), running in the browser of the user.
-- The **backend**: a Python FastAPI application, running in a container on OpenShift. It handles the communication with the database, the LLM, and the Object storage. It handles the communication with the frontend by exposing a REST API.
-- The **database**: a PostgreSQL database, running in a container on OpenShift. It stores the claims.
-- The **LLM**: the language model used to summarize and extract information from the claims. It is consumed by the backend through its API.
-- The **Object storage**: an S3-compatible object storage. It stores the claim images.
+== アプリケーション コード
 
-== Application Code
+アプリケーションのコードを確認したい場合は、OpenShift AI から直接行うことができます。
 
-If you want to have a look at the code of the application, you can do it directly from OpenShift AI!
-
-- Close the different Jupyter tabs that may still be opened in your browser.
-- Go back to the OpenShift AI dashboard.
-- Stop your Workbench by using the toggle.
--- You should probably give it 5 or 10 seconds to fully stop.
-- Edit the Workbench configuration by clicking on the menu item at the left, then **Edit workbench** button.
+- ブラウザーでまだ開いている可能性のあるさまざまな Jupyter タブを閉じます。
+- OpenShift AI ダッシュボードに戻ります。
+- トグルを使用してワークベンチを停止します。
+- 完全に停止するには、おそらく 5 秒から 10 秒かかります。
+- 左側のメニュー項目をクリックしてから、[ワークベンチの編集] ボタンをクリックして、ワークベンチ構成を編集します。
 +
 [.bordershadow]
 image::05/stop-workbench.png[]
 
-- In the image section, change the image to `CUSTOM - VSCode for Insurance Claim Processsing Lab`:
+- イメージ セクションで、イメージを `CUSTOM - VSCode for Insurance Claim Processsing Lab` に変更します。
 +
 [.bordershadow]
 image::05/vscode-image.png[]
-- Note that this is a Custom-built image added in this particular lab to illustrate the flexibility of the OpenShift AI platform. Not everyone wants to use Jupyter Notebooks for everything.
+- これは、OpenShift AI プラットフォームの柔軟性を示すために、この特定のラボで追加されたカスタム ビルド イメージであることに注意してください。すべての人がすべての用途に Jupyter Notebook を使用したいわけではありません。
 
-- Then click on `Update workbench` at the bottom of the page:
+- 次に、ページの下部にある「ワークベンチの更新」をクリックします。
 +
 [.bordershadow]
 image::05/update-workbench.png[]
 
-- You can now start your Workbench again by using the toggle.
-- Once the Workbench is started, click on the **Open** Link.
-- You will be redirected to the VSCode IDE.
-- After logging in and accepting the authorization, VSCode will open.
-- The first time you connect to it, you must indicate that you trust the workspace.
-- Click on the **Yes, I trust the authors** button.
+- トグルを使用してワークベンチを再度起動できるようになりました。
+- ワークベンチが起動したら、[**開く**] リンクをクリックします。
+- VSCode IDE にリダイレクトされます。
+- ログインして承認を受け入れると、VSCode が開きます。
+- 初めて接続するときは、ワークスペースを信頼していることを示す必要があります。
+- [**はい、作成者を信頼します**] ボタンをクリックします。
 +
 [.bordershadow]
 image::05/trust-vscode.png[]
 
-* You can also close the Welcome tab, and you are in a familiar VSCode environment.
-* Your Persistent Volume has been automatically reconnected to this new environment.
-** Therefore, all the data you created in the Jupyter environment is still available
-** You can see more files because VSCode displays hidden files by default, which Jupyter does not do.
-* If you want, you can now explore the code of the application, in the `app` folder:
+* [ようこそ] タブを閉じると、使い慣れた VSCode 環境に戻ります。
+* 永続ボリュームは、この新しい環境に自動的に再接続されました。
+** したがって、Jupyter 環境で作成したすべてのデータは引き続き利用できます
+** VSCode はデフォルトで隠しファイルを表示するため、より多くのファイルを表示できますが、Jupyter ではそうではありません。
+* 必要に応じて、`app` フォルダー内のアプリケーションのコードを調べることができます:
 +
 [.bordershadow]
 image::05/app-code.png[]
