@@ -1,38 +1,39 @@
 = Getting connected
 include::_attributes.adoc[]
 
-For the purposes of this training session, we have provisioned a single OpenShift cluster, with OpenShift AI deployed on it.
+このトレーニング セッションでは、OpenShift AI がデプロイされた単一の OpenShift クラスターをプロビジョニングしました。
 
-Since the models are hosted on cpus rather than gpus, this particular lab should be used as demo by individual. LLM works slow on cpus and you will see that in this demo when you try to query LLM.
+モデルは GPU ではなく CPU でホストされるため、この特定のラボは個人によるデモとして使用する必要があります。LLM は CPU では動作が遅く、LLM をクエリしようとするとこのデモでそのことがわかります。
 
-== Environment information
+== 環境情報
 
-If you are using the customized version of the instructions, the information below will render properly. If not, you will see placeholder values instead.
+カスタマイズされたバージョンの手順を使用している場合は、以下の情報が正しく表示されます。そうでない場合は、代わりにプレースホルダー値が表示されます。
 
-* Your account id: `{user}`
-* Your password: `{password}`
+* アカウント ID: `{user}`
+* パスワード: `{password}`
 
-In a new window or tab, open the following URL and log in:
+新しいウィンドウまたはタブで、次の URL を開いてログインします:
 
-* The Red Hat OpenShift AI Dashboard URL for our shared environment:
+* 共有環境の Red Hat OpenShift AI ダッシュボード URL:
 ** https://rhods-dashboard-redhat-ods-applications.{openshift_cluster_ingress_domain}/[https://rhods-dashboard-redhat-ods-applications.{openshift_cluster_ingress_domain}/,window=_blank]
-* Enter your credentials (as detailed above)
-* The result should look like:
+* 認証情報を入力します (上記のとおり)
+* 結果は次のようになります:
 +
 [.bordershadow]
 image::02/02-01-login1.png[width=50%]
 
-* Because the password is so simple (`{password}`), your browser might display a scary message such as:
+* パスワードが非常に単純なため (`{password}`)、ブラウザに次のような恐ろしいメッセージが表示される場合があります:
 +
 [.bordershadow]
 image::02/02-01-login-scary.png[]
-* It is safe here to ignore this message when it pops up.
+*このメッセージが表示されたら無視しても問題ありません。
 
-* After you authenticate, the result should look like:
+* 認証後、結果は次のようになります:
+
 +
 [.bordershadow]
 image::02/02-01-rhoai-front-page.png[]
 
-If you got this far and saw all that, congratulations, you properly connected to the OpenShift AI Dashboard Application!
+ここまで読み進めてすべてを確認できた場合は、おめでとうございます。OpenShift AI ダッシュボード アプリケーションに正しく接続されています。
 
-We are now ready to start the lab.
+これでラボを開始する準備ができました。
