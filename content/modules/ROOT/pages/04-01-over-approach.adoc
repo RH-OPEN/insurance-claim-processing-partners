@@ -1,19 +1,20 @@
 = Overall Approach
 include::_attributes.adoc[]
 
-As part of this prototype, we investigated the use of the YOLOv8 model.
-This model can be found online at https://www.yolov8.com[yolov8,window=_blank] and downloaded.
+このプロトタイプの一部として、YOLOv8 モデルの使用を調査しました。
 
-We will first review its out-of-the-box capabilities. We will then fine-tune it to allow it to do more specialized work for us. Once we have a new, customized version of the model, we will deploy it in OpenShift AI Model Serving. Once that is done, we will send queries to it.
+このモデルは、https://www.yolov8.com[yolov8,window=_blank] でオンラインで見つけてダウンロードできます。
 
-Let's start by looking at a YOLOv8 model and explore how it works on static car images.
+まず、すぐに使用できる機能を確認します。次に、より専門的な作業を実行できるように微調整します。モデルの新しいカスタマイズされたバージョンができたら、OpenShift AI Model Serving にデプロイします。それが完了したら、クエリを送信します。
+
+まず、YOLOv8 モデルを見て、静的な車の画像でどのように機能するかを調べてみましょう。
 
 [.bordershadow]
-image::04/sample-car-image.png[car image]
 
-- In your running workbench, navigate to the folder `insurance-claim-processing/lab-materials/04`.
-- Look for (and open) the notebook called `04-01-over-approach.ipynb`
-- Execute the cells of the notebook, and ensure you understand what is happening
+image::04/sample-car-image.png[車の画像]
 
+- 実行中のワークベンチで、フォルダー `insurance-claim-processing/lab-materials/04` に移動します。
 
+- `04-01-over-approach.ipynb` というノートブックを探して開きます
+- ノートブックのセルを実行して、何が起こっているか理解していることを確認します
 
