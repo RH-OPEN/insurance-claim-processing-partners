@@ -1,12 +1,12 @@
 = Information Extraction
 include::_attributes.adoc[]
 
-As part of our claim processing, we want to extract some information from the text of a claim. In the next notebook we will investigate how the LLM can be used to do this task.
+請求処理の一環として、請求のテキストから情報を抽出したいと考えています。次のノートブックでは、LLM を使用してこのタスクを実行する方法を調べます。
 
-From the `insurance-claim-processing/lab-materials/03` folder, please open the notebook called `03-03-information-extraction.ipynb` and follow the instructions.
+`insurance-claim-processing/lab-materials/03` フォルダーから、`03-03-information-extraction.ipynb` というノートブックを開き、指示に従ってください。
 
-Kindly note that we are using cpus instead of gpus and so output rendered from LLM will be little slower than expected, but the focus is more on the functionality and what can be achieved from OpenShift AI. Please note that you will take atleast 2 to 4 mints to get output gpt each prmpt from LLM per claim, there are three things LLM is asked per claim i.e. sentiment, location adn time. So it takes around 6 mints per claim processing and there are two claims to be processed.
+GPU ではなく CPU を使用しているため、LLM からの出力は予想よりも少し遅くなりますが、機能と OpenShift AI で実現できることに重点が置かれています。請求ごとに LLM からの出力を取得するには、少なくとも 2 ～ 4 分かかります。請求ごとに LLM に求められるのは、感情、場所、時間の 3 つです。したがって、請求処理には約 6 分かかり、処理する請求は 2 件です。
 
-Rather than waiting you can move to Section 04 to finish the lab and then come back to this notebook to check the output.
+待つのではなく、セクション 04 に移動してラボを終了し、このノートブックに戻って出力をチェックすることができます。
 
-When done, you can close the notebook and head to the next page.
+完了したら、ノートブックを閉じて次のページに進むことができます。
