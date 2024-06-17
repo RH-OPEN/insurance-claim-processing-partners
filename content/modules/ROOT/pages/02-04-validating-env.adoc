@@ -11,11 +11,11 @@ include::_attributes.adoc[]
 
 . Jupyter Notebook でセルを実行したことがない場合は、次の手順に従います。
 
-.. [**カーネルを再起動してすべてのセルを実行**] リンクをクリックします:
+.. [**Restart kernel and Run all Cells**] リンクをクリックします:
 +
 [.bordershadow]
 image::02/02-04-restart-and-run.png[]
-.. [**再起動**] をクリックします:
+.. [**Restart**] をクリックします:
 +
 [.bordershadow]
 image::02/02-04-restart-kernel.png[]
