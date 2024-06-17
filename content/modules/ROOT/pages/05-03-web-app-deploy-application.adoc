@@ -1,12 +1,12 @@
 = Deploying the application via GitOps
 include::_attributes.adoc[]
 
-== Deploy your instance of ArgoCD
+== ArgoCD のインスタンスをデプロイする
 
-We will start by deploying an instance of ArgoCD in your namespace. +
-This will be used to deploy the application.
+まず、ArgoCD のインスタンスを名前空間にデプロイします。 +
+これはアプリケーションのデプロイに使用されます。
 
-- Copy the following text, and paste it in the OpenShift Terminal to deploy ArgoCD.
+- 次のテキストをコピーし、OpenShift ターミナルに貼り付けて ArgoCD をデプロイします。
 +
 [.lines_space]
 [.console-input]
@@ -42,43 +42,43 @@ spec:
         termination: edge
 EOF
 
-- Still in the Terminal, run the following command to check the status of the ArgoCD deployment.
+- 引き続きターミナルで、次のコマンドを実行して、ArgoCD デプロイメントのステータスを確認します。
 +
 [.lines_space]
 [.console-input]
 [source, text]
 oc rollout status deploy/argocd-server
 
-- After a few seconds, the deployment should be complete:
+- 数秒後、デプロイメントが完了します:
 +
 [.bordershadow]
 image::05/argocd-rollout.png[]
 
-**Optional**: If you know and understand ArgoCD and want to look at its interface, look at the following details. Otherwise, you can skip to the next step.
+**オプション**: ArgoCD について理解していて、そのインターフェースを確認したい場合は、次の詳細を確認してください。それ以外の場合は、次の手順に進んでください。
 [%collapsible]
 ====
-Now that Argo is deployed, you can connect to its UI through its Route.
+Argo がデプロイされたので、ルートを介して UI に接続できます。
 
-- Let's find the Route of the ArgoCD instance by running the following command in the Terminal:
+- ターミナルで次のコマンドを実行して、ArgoCD インスタンスのルートを見つけましょう:
 +
 [.lines_space]
 [.console-input]
 [source, text]
 echo "   ArgoCD UI : https://$(oc get route argocd-server -ojsonpath='{.status.ingress[0].host}')/ "
 
-- You should obtain something like this:
+- 次のようなものが表示されます:
 +
 [.bordershadow]
 image::05/argocd-route.png[]
 
-- You can now connect to the ArgoCD UI using your given credentials ({user}/{password}).
+- これで、指定した認証情報 ({user}/{password}) を使用して ArgoCD UI に接続できます。
 ====
 
-== Deploy the application(s) via GitOps
+== GitOps 経由でアプリケーションをデプロイ
 
-Now that ArgoCD is deployed in your namespace, we can use it to deploy the application via GitOps.
+ArgoCD が名前空間にデプロイされたので、これを使用して GitOps 経由でアプリケーションをデプロイできます。
 
-- Copy the content of the following text, and paste it in the OpenShift Terminal to deploy the application.
+- 次のテキストの内容をコピーし、OpenShift ターミナルに貼り付けてアプリケーションをデプロイします。
 +
 [.lines_space]
 [.console-input]
@@ -118,12 +118,12 @@ spec:
     syncOptions: [CreateNamespace=false]
 EOF
 
-- Wait for the application to be fully deployed and initialized. It will be the case when the two Jobs `db-init-job` and `populate-images` are completed (Completions: 1 of 1).
+- アプリケーションが完全にデプロイされ、初期化されるまで待ちます。2 つのジョブ `db-init-job` と `populate-images` が完了したら、完了です (完了: 1/1)。
 
 [.bordershadow]
 image::05/jobs-completed.png[]
 
-- Once the application is deployed, you can check its Route with the following command:
+- アプリケーションがデプロイされたら、次のコマンドでルートを確認できます。
 +
 [.lines_space]
 [.console-input]
@@ -132,4 +132,4 @@ image::05/jobs-completed.png[]
 [source, text]
 echo "   Application URL : https://$(oc get route ic-app -ojsonpath='{.status.ingress[0].host}')/ "
 
-Open the URL in your browser to access the application and head to the next step.
+ブラウザで URL を開いてアプリケーションにアクセスし、次のステップに進みます。
