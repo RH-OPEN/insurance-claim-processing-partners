@@ -1,52 +1,52 @@
 = Creating a workbench
 include::_attributes.adoc[]
 
-== Launch a Workbench
+== ワークベンチを起動
 
-* Once the Data Connection and Pipeline Server are fully created
-* Create a workbench
+* データ接続とパイプライン サーバーが完全に作成されたら
+* ワークベンチを作成します
 +
 [.bordershadow]
 image::02/02-03-create-wb.png[]
-* Make sure it has the following characteristics:
+* 次の特性があることを確認します:
 ** Choose a name for it, like: `My Workbench`
 ** Image Selection: `CUSTOM - Insurance Claim Processing Lab Workbench`
 ** Container Size: `Standard`
 ** Accelerator: `None`
-* That should look like:
+* 次のようになります:
 +
 [.bordershadow]
 image::02/02-02-launch-workbench-01.png[]
-* You should not need to modify any other Workbench settings (such as Storage)
-* Wait for your workbench to be fully started
-* Once it is, click the **Open** Link to connect to it.
+* その他のワークベンチ設定 (ストレージなど) を変更する必要はありません
+* ワークベンチが完全に起動するまで待ちます
+* 起動したら、**[開く]** リンクをクリックして接続します
 +
 [.bordershadow]
 image::02/02-03-open-link.png[]
 
-* Authenticate with the same credentials as earlier
-* You will be asked to accept the following settings:
+* 以前と同じ認証情報で認証します
+* 次の設定を受け入れるように求められます:
 +
 [.bordershadow]
 image::02/02-02-accept.png[]
 
-* Do so
-* You should now see this:
+* 同意します
+* 次の画面が表示されます:
 +
 [.bordershadow]
 image::02/02-02-jupyter.png[]
 
-== Git-Clone the common repo
+== Git 共通リポジトリのクローンを作成します
 
-We will clone the content of our Git repo so that you can access all the materials that were created as part of our prototyping exercise.
+Git リポジトリのコンテンツをクローンして、プロトタイピング演習の一環として作成されたすべての資料にアクセスできるようにします。
 
-* Using the Git UI:
-** Open the Git UI in Jupyter:
+* Git UI の使用:
+** Jupyter で Git UI を開きます:
 +
 [.bordershadow]
 image::02/git-clone-1.png[]
 +
-** Enter the URL of the Git repo:
+** Git リポジトリの URL を入力します:
 +
 [.console-input]
 [source,adoc]
@@ -58,4 +58,4 @@ image::02/git-clone-1.png[]
 [.bordershadow]
 image::02/git-clone-2.png[]
 
-At this point, your project is ready for the work we want to do in it.
+この時点で、プロジェクトは、私たちがやりたい作業を行う準備が整いました。
