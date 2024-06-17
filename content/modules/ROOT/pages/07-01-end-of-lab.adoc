@@ -1,13 +1,13 @@
 = Thank you for your participation
 include::_attributes.adoc[]
 
-We hope that the materials we used during this time together were useful and gave you a better appreciation and understanding of what goes into an intelligent application.
+この間一緒に使用した資料が役に立ち、インテリジェント アプリケーションに何が含まれるかについて理解を深めていただければ幸いです。
 
-If you notice https://github.com/ritzshah/insurance-claim-processing-partners/issues[issues,window=_blank] with the content and/or want to send us a https://github.com/ritzshah/insurance-claim-processing-partners/pulls[pull request,window=_blank], we'll appreciate it very much.
+コンテンツに関する https://github.com/ritzshah/insurance-claim-processing-partners/issues[issues,window=_blank] に気付いた場合や、https://github.com/ritzshah/insurance-claim-processing-partners/pulls[pull request,window=_blank] を送信したい場合は、ぜひお知らせください。
 
-== Acknowledgements
+== 謝辞
 
-Here is a list of people who have participated, directly or indirectly, to the creation and delivery of this lab.
+このラボの作成と配信に直接的または間接的に参加した人々のリストを以下に示します。
 
 * Guillaume Moutier
 * Robert Lundberg
