@@ -1,47 +1,47 @@
 = Pipeline for processing claims
 include::_attributes.adoc[]
 
-== What will the pipeline do?
-Now that we have the web app deployed, we can see that some claims are unprocessed yet. Of course, we want to execute this processing, and it's even better if it can be fully automated!
+== パイプラインは何をしますか?
+Web アプリがデプロイされたので、まだ処理されていないクレームがあることがわかります。 もちろん、この処理を実行したいのですが、完全に自動化できればさらに良いでしょう!
 
-For that, we will use a pipeline that can either be run ad-hoc or scheduled just like, the sanity check pipeline.
+そのためには、サニティ チェック パイプラインのように、アドホックで実行することもスケジュールで実行することもできるパイプラインを使用します。
 
-This pipeline is also a good starting point for creating an ArgoCD or Tekton pipeline which can be automatically triggered.
+このパイプラインは、自動的にトリガーできる ArgoCD または Tekton パイプラインを作成するための良い出発点でもあります。
 
-Note that pipeline have tasks where it access LLM and those tasks will take atleast 2 to 4 minutes each as we are using cpu's rather than gpu's in the backend for LLM, total pipeline run might be 8 to 10 mints, so while the pipeline is running you can show the LLM pod logs(as admin user) and the pipelinerun and task logs (as user1)
+パイプラインには LLM にアクセスするタスクがあり、LLM のバックエンドでは GPU ではなく CPU を使用しているため、これらのタスクはそれぞれ少なくとも 2 ～ 4 分かかります。パイプライン全体の実行時間は 8 ～ 10 分になる可能性があるため、パイプラインの実行中に LLM ポッド ログ (管理者ユーザーとして) とパイプライン実行およびタスク ログ (ユーザー 1 として) を表示できます。
 
-== What's inside the pipeline?
+== パイプラインの内容
 
-If you navigate to `insurance-claim-processing/lab-materials/05/05-05` you can see a variety of files. +
+`insurance-claim-processing/lab-materials/05/05-05` に移動すると、さまざまなファイルが表示されます。+
 
-This time, we will use the **yaml definition** of a **pipeline**, `process_claims.yaml`, to process the claims. +
+今回は、**パイプライン** の **yaml 定義** である `process_claims.yaml` を使用して請求を処理します。+
 
-Here are the main files of the pipeline and what they do:
+パイプラインの主なファイルとその機能は次のとおりです:
 
-* *get_claims* - Will connect to the database, fetch any unprocessed claims, and add them to a list that will be passed to the other tasks through a file: `claims.json`.
-* The following scripts will go through all the claims that need to be processed, and use the full body of the text to try and find some important feature, then push the results to the database:
+* *get_claims* - データベースに接続し、未処理の請求を取得して、ファイル `claims.json` を通じて他のタスクに渡されるリストに追加します。
+* 次のスクリプトは、処理する必要があるすべての請求を調べ、テキストの本文全体を使用して重要な機能を見つけ、結果をデータベースにプッシュします:
 ** *get_location* - Finds the location of the accident.
 ** *get_accident_time* - Finds the time of the accident.
 ** *summarize_text* - Makes a short summary of the text.
 ** *get_sentiment* - Gets the sentiment of the text.
 * *detect_objects* - Downloads the images of the claim and uses the served object-detection model to classify the damages in the image.
 
-NOTE: In the folder, we still have for reference an Elyra version of the pipeline (`process_claims.pipeline`), but you cannot really use it from VSCode, which is the environment you should still be in.
+NOTE: フォルダーには、参照用に Elyra バージョンのパイプライン (`process_claims.pipeline`) が残っていますが、VSCode から実際に使用することはできません。VSCode は、まだ使用すべき環境です。
 
-== Create a new PVC
+== 新しい PVC を作成する
 
-Before we can run the pipeline, we need to create a PVC that will be used to store intermediary files and results in. +
-Go to the OpenShift Console and navigate to Storage -> PersistentVolumeClaims.
-
-[.bordershadow]
-image::05/05-PVC.png[go to PVC]
-
-Make sure you are in the right project (your username) and then press `Create PersistentVolumeClaim`.
+パイプラインを実行する前に、中間ファイルと結果を格納するために使用する PVC を作成する必要があります。 +
+OpenShift コンソールに移動し、[ストレージ] -> [PersistentVolumeClaims] に移動します。
 
 [.bordershadow]
-image::05/05-create-pvc.png[Create PVC]
+image::05/05-PVC.png[PVC に移動]
 
-* Use these settings:
+正しいプロジェクト (ユーザー名) にいることを確認してから、[Create PersistentVolumeClaim] を押します。
+
+[.bordershadow]
+image::05/05-create-pvc.png[PVC を作成]
+
+* 次の設定を使用します。
 ** StorageClass:
 [.lines_space]
 [.console-input]
@@ -70,29 +70,29 @@ Shared access (RWX)
 [.bordershadow]
 image::05/05-PVC-settings.png[PVC settings]
 
-Then press `Create`.
+次に、「作成」を押します。
 
-== Run the pipeline
-To run the pipeline, start by downloading the `process_claims.yaml` file locally. +
-Then go to your Data Science project and press Import Pipeline.
-
-[.bordershadow]
-image::05/05-import-pipeline-button.png[import pipeline]
-
-Now upload process_claims.yaml file, either by drag-and-dropping or using the Upload button. Then make sure to give your pipeline a good name like `Process Claims Pipeline`. +
-It should look something like this afterwards:
+== パイプラインを実行する
+パイプラインを実行するには、まず「process_claims.yaml」ファイルをローカルにダウンロードします。 +
+次に、データ サイエンス プロジェクトに移動して、「パイプラインのインポート」を押します。
 
 [.bordershadow]
-image::05/05-imported-pipeline.png[imported pipeline]
+image::05/05-import-pipeline-button.png[パイプラインのインポート]
 
-Press `Import Pipeline` and you should see it pop up under your pipelines.
+次に、ドラッグ アンド ドロップするか、「アップロード」ボタンを使用して、process_claims.yaml ファイルをアップロードします。次に、パイプラインに「Process Claims Pipeline」などの適切な名前を付けます。 +
+その後、次のようになります。
 
-Now go into the settings at the right side and press Create Run to create a new run of the pipeline you just added. Total pipeline run might be 8 to 10 mints, so while the pipeline is running you can show the LLM pod logs(as admin user) and the pipelinerun and task logs (as user1). You can show OpenShiftAI UI.
+[.bordershadow]
+image::05/05-imported-pipeline.png[インポートされたパイプライン]
+
+「パイプラインのインポート」を押すと、パイプラインの下にポップアップ表示されます。
+
+次に、右側の設定に移動して「実行の作成」を押し、追加したパイプラインの新しい実行を作成します。パイプラインの実行は合計で 8 ～ 10 分かかる可能性があるため、パイプラインの実行中に、LLM ポッド ログ (管理者ユーザーとして) とパイプライン実行およびタスク ログ (ユーザー 1 として) を表示できます。OpenShiftAI UI を表示できます。
 
 [.bordershadow]
 image::05/05-create-run.png[create run]
 
-* Use these settings:
+* 次の設定を使用します。
 ** Name:
 [.lines_space]
 [.console-input]
@@ -118,21 +118,21 @@ Run once immediately after creation
 [subs=attributes+]
 http://modelmesh-serving.{user}:8008
 
-This is the same route to the object detection endpoint that was used earlier in the workshop. +
-When done it should look something like this:
+これは、ワークショップで以前に使用したオブジェクト検出エンドポイントへのルートと同じです。 +
+完了すると、次のようになります。
 
-You can refresh the end point after each task completion to show the change in the output for Claim 3.
+各タスクの完了後にエンドポイントを更新して、クレーム 3 の出力の変化を表示できます。
 
 [.bordershadow]
-image::05/05-run-settings-create-pipeline.png[run settings]
+image::05/05-run-settings-create-pipeline.png[実行設定]
 
-Note that by changing claim_id you can change which claim to process. If you set it to 0 it will process all unprocessed claims.
+claim_id を変更すると、処理するクレームを変更できます。0 に設定すると、未処理のクレームがすべて処理されます。
 
-Press `Create` and watch it go.
+「作成」を押して、実行を確認します。
 
-== Check the results
+== 結果を確認する
 
-Since the pipeline run is on cpu and LLM takes a little more time, kindly proceed to next section whcih is theory and discus next steps and then come back to the resutls of this pipeline run after 6 to 10 minutes, ensure that you refresh the app web UI.
-After the pipeline has finished running, you can go to the app and take a look at the claims. +
-Instead of just a long body, you will now see a summary, a location field, an accident time field, and a sentiment field. +
-You can also see that we have new image(s) which have bounding boxes where the damage is.
+パイプラインの実行は CPU で行われ、LLM にはもう少し時間がかかるため、理論に関する次のセクションに進み、次のステップについて話し合い、6 ～ 10 分後にこのパイプラインの実行結果に戻って、アプリの Web UI を更新してください。
+パイプラインの実行が完了したら、アプリに移動してクレームを確認できます。 +
+長い本文だけでなく、概要、場所フィールド、事故時間フィールド、感情フィールドが表示されます。 +
+また、損傷箇所に境界ボックスがある新しい画像があることもわかります。
