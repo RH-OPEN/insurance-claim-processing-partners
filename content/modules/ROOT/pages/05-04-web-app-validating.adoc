@@ -1,22 +1,22 @@
 = Validating the application
 include::_attributes.adoc[]
 
-== Original App
+== オリジナル アプリ
 
-The first item menu on the left, Original App, gives a view of what the older application used at the insurance company looks like. You can navigate each claim and see that the interface was very crude, with a simple copy of the originally received email with the pictures that were attached to it.
+左側の最初の項目メニューである「オリジナル アプリ」では、保険会社で使用されていた古いアプリケーションがどのようなものかを確認できます。各請求をナビゲートすると、インターフェイスが非常に粗雑で、最初に受信したメールの単純なコピーと添付された写真だけが表示されていたことがわかります。
 
 [.bordershadow]
 image::05/original-app-1.png[]
 [.bordershadow]
 image::05/original-app-2.png[]
 
-== Prototype App
+== プロトタイプ アプリ
 
-The second item menu on the left, New App, gives a view of what the prototype of the new application looks like. You can navigate each claim and see that the interface is much more user friendly, with a nice interface to navigate the claim and see the pictures that were attached to it.
+左側の 2 番目の項目メニューである「新しいアプリ」では、新しいアプリケーションのプロトタイプがどのようなものかを確認できます。各請求をナビゲートすると、インターフェイスがはるかにユーザー フレンドリーで、請求をナビゲートして添付された写真を見るための優れたインターフェイスが備わっていることがわかります。
 
-Moreover, for the claims that have been processed, you can see the summary of this claim as well as the customer sentiment analysis, the location and time of the event that have been extracted from the claim, and the pictures that have been processed by the AI.
+さらに、処理された請求については、この請求の概要、顧客感情分析、請求から抽出されたイベントの場所と時間、AI によって処理された写真を確認できます。
 
 [.bordershadow]
 image::05/new-app-1.png[]
 
-This is still obviously a very simple and crude application, but remember that this was a prototype. And it was enough to show the potential of an AI-Enhanced application to the board, and convince them to invest in the project.
+これは明らかにまだ非常にシンプルで粗雑なアプリケーションですが、これはプロトタイプだったことを忘れないでください。そして、AI 強化アプリケーションの可能性を取締役会に示し、プロジェクトへの投資を説得するには十分でした。
