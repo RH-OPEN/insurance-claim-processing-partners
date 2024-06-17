@@ -96,14 +96,14 @@ image::02/data-connection.png[]
 
 == パイプライン サーバーの作成
 
-ワークベンチを作成する前に、パイプライン サーバーを作成することを強くお勧めします。それでは、今すぐ作成しましょう! 「パイプラインの作成」ではなく「パイプラインの構成」が表示される場合があります。それを選択して、minio エンドポイント「http://minio.ic-shared-minio.svc.cluster.local:9000/」とバケット「user1」を入力します。ユーザー名とパスワードも入力する必要がある場合は、それぞれ「minio」と「minio123」です。
+ワークベンチを作成する前に、パイプライン サーバーを作成することを強くお勧めします。それでは、今すぐ作成しましょう!　`Create Pipeline`　ではなく　`Configure Pipeline`　が表示される場合があります。それを選択して、minio エンドポイント　`http://minio.ic-shared-minio.svc.cluster.local:9000/`　とバケット　`user1`　を入力します。ユーザー名とパスワードも入力する必要がある場合は、それぞれ　`minio`　と　`minio123`　です。
 
-* データ サイエンス プロジェクト (DSP) で、[**パイプライン サーバーの作成**] をクリックします。
+* データ サイエンス プロジェクト (DSP) で、[**Create a pipeline Server**] をクリックします。
 +
 [.bordershadow]
 image::02/02-02-pipelineserver01.png[]
 
-* 以前に作成したデータ接続 (**Shared Minio - pipelines**) を選択し、[**構成**] ボタンをクリックします。
+* 以前に作成したデータ接続 (**Shared Minio - pipelines**) を選択し、[**Configure**] ボタンをクリックします。
 +
 [.bordershadow]
 image::02/02-02-pipelineserver02.png[]
