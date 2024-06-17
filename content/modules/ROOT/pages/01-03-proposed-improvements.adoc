@@ -3,18 +3,18 @@ include::_attributes.adoc[]
 :slide:
 
 
-* Recommendations:
-** Progressive, step-wise, implementation
-** Use various AI/ML tools and techniques to **assist** the adjusters
-** (Completely replacing humans is extremely hard. Helping them is much easier)
-** Provide support for low-level, repetitive tasks
-*** Point out areas in need of review
-*** Help with parsing and data extraction
-* Goals:
-** bring average processing time from 7h/claim down to 2h/claim
-** reduce human error by 80%
-** improve fraud detection by 25%
-* Requirements
-** More precise measurements of performance
-**** at baseline
-**** after every change/improvement
+* 推奨事項:
+** 段階的に段階的に実装
+** さまざまな AI/ML ツールとテクニックを使用して査定人を **支援**
+** (人間を完全に置き換えるのは非常に困難です。彼らを支援する方がはるかに簡単です)
+** 低レベルの反復タスクのサポートを提供する
+*** 確認が必要な領域を指摘する
+*** 解析とデータ抽出を支援する
+* 目標:
+** 平均処理時間を請求 1 件あたり 7 時間から 2 時間に短縮する
+** 人的エラーを 80% 削減する
+** 不正検出を 25% 改善する
+* 要件
+** パフォーマンスのより正確な測定
+**** ベースライン時
+**** すべての変更/改善後
