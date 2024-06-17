@@ -2,18 +2,18 @@
 include::_attributes.adoc[]
 :slide:
 
-* Claims can come in from multiple mediums:
-** email
-** fax
-** phone
-** web form
-* All formats will have to be transcribed into the web form for better uniformity
+* クレームは複数の媒体から送られてくる可能性があります:
+** 電子メール
+** ファックス
+** 電話
+** Web フォーム
+* 統一性を高めるために、すべての形式を Web フォームに転記する必要があります
 
-* Claims have to be processed by (human) claims adjusters
-** They spend an aggregated average of 7 hours/claim
-** We estimate that human errors account for $2.5M/year in lost revenue
-** Another $3.5M/year is likely lost due to insurance fraud
-* There are a lot of inefficiencies!
-** Adjusters report "workload-fatigue", i.e. making mistakes due to the repetitive nature of the work.
-** It also takes a long time to train new adjusters into the specific policies of the companies.
-** Encoding some of that tribal knowledge into a software product is highly desirable.
+* クレームは (人間の) クレーム査定人が処理する必要があります
+** 査定人はクレーム 1 件あたり平均 7 時間を費やしています
+** 人為的ミスによる収益損失は年間 250 万ドルと推定されます
+** さらに、保険金詐欺により年間 350 万ドルが失われる可能性があります
+* 非効率な点がたくさんあります!
+** 査定人は「作業負荷疲労」、つまり作業の反復性によるミスを報告しています。
+** また、新しい査定人に会社の特定のポリシーをトレーニングするのにも長い時間がかかります。
+** こうした部族の知識の一部をソフトウェア製品にエンコードすることが非常に望ましいです。
