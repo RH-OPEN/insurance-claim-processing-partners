@@ -1,32 +1,32 @@
 = Prompt Engineering exercise (optional)
 include::_attributes.adoc[]
 
-NOTE: This part of the lab is marked as optional. It can therefore be skipped without effect on the other parts of the lab. You can always come back to it later at the end of the lab if you have time to spare.
+NOTE: ラボのこの部分はオプションとしてマークされています。したがって、ラボの他の部分に影響を与えることなくスキップできます。時間に余裕がある場合は、ラボの最後にいつでもこの部分に戻ることができます。
 
-IMPORTANT: When you interact with ChatGPT or other commercial services, a lot of guardrails are in place to prevent you from getting unwanted  or not suitable for work results. In our Lab exercises, we are using a model that is not protected by those guardrails, and we will be modifying its settings. Therefore, it is your responsibility to do it in a safe way, and to make sure that the results you get are suitable for you and/or your audience. The authors of this Lab cannot be held responsible for any inappropriate results you may get.
+IMPORTANT: ChatGPT やその他の商用サービスとやり取りする場合、望ましくない結果や仕事に適さない結果が出ないように、多くのガードレールが設けられています。ラボの演習では、これらのガードレールで保護されていないモデルを使用しており、その設定を変更します。したがって、安全な方法で実行し、得られた結果が自分や視聴者にとって適切であることを確認するのは、ユーザーの責任です。このラボの作成者は、ユーザーが得る不適切な結果について責任を負いません。
 
-As you have seen in the previous sections, there are different factors that will influence the results you can get from your model: the model parameters, the prompt, the query, and of course the data itself...
+前のセクションで見たように、モデルから得られる結果に影響を与えるさまざまな要因があります。モデル パラメータ、プロンプト、クエリ、そしてもちろんデータ自体です...
 
-Let's see how we can adjust those different factors to get the best results.
+これらのさまざまな要因を調整して、最良の結果を得る方法を見てみましょう。
 
-== Modifying the settings
+== 設定の変更
 
-Go back to the notebook `03-01-nb-llm-example.ipynb` and try changing:
+ノートブック `03-01-nb-llm-example.ipynb` に戻り、次の変更を試してください。
 
-- The llm parameters, like the `temperature`, to make the model more creative
-- The `prompt template`, to make the model behave differently, like giving the answer in the form of a poem. Or more useful in an enterprise context, give answers like it was addressing different types of audience: for example 5 years old children, or people without technical knowledge, or the opposite...
-- The `query` itself which you can use to override certain aspects of the prompt. This will show you why it's important to have guardrails in place against "prompt injection", like pre-filtering user queries
+- llm パラメータ (`temperature` など)。モデルをよりクリエイティブにします。
+- `prompt template`。モデルの動作を変えて、詩の形で答えを出すようにします。または、エンタープライズ コンテキストでより便利なのは、さまざまなタイプの対象者 (たとえば、5 歳の子供、技術的な知識のない人、またはその逆) に話しかけているように答えを出すことです。
+- `query` 自体。プロンプトの特定の側面をオーバーライドするために使用できます。これにより、ユーザー クエリを事前にフィルタリングするなど、「プロンプト インジェクション」に対するガードレールを準備することが重要である理由がわかります
 
-== Modifying the data
+== データの変更
 
-Go back to the notebook `03-02-summarization.ipynb` and try changing:
+ノートブック `03-02-summarization.ipynb` に戻り、次の変更を試してください:
 
-- Edit or create new claims, making them harder to understand. (Note: to edit the json file in Jupyter, right click on it and select "Open With > Editor")
-- Experiment with different languages
+- クレームを編集または新規作成して、理解しにくくします。(注: Jupyter で json ファイルを編集するには、ファイルを右クリックして [開く] > [エディター] を選択します)
+- さまざまな言語を試してください
 
-== Modifying the prompt
+== プロンプトの変更
 
-Go back to the notebook `03-03-information-extraction.ipynb` and try changing:
+ノートブック `03-03-information-extraction.ipynb` に戻り、次の変更を試してください:
 
-- Edit or create new claims, making them harder to understand
-- Try to have the model more precise and concise in date and time extraction, like making it respect a specific format
+- クレームを編集または新規作成して、理解しにくくします
+- 特定の形式を尊重するなど、日付と時刻の抽出においてモデルをより正確かつ簡潔にしてください
