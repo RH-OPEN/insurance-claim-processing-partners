@@ -1,19 +1,19 @@
 = Setting the stage
 include::_attributes.adoc[]
 
-In order to make this demo seem more realistic, we will be describing this imaginary scenario.
+このデモをより現実的に見せるために、架空のシナリオについて説明します。
 
-== Situation
+== 状況
 :slide:
 
-* We all work for a large multi-national insurance company
-** Our company is in the midst of digital transformation
-** It is looking at modernizing practices and leveraging new technologies
-* A small team was asked to:
-** review the way insurance claims are currently being processed
-** provide advice on potential improvements
-* That team is currently very small (about 4 people)
-** Findings will be presented to the board
-** If they are convincing, the team will be granted the resources to implement the recommendations
-* The next sections in this chapter are the materials that were presented to the board
+* 私たち全員が大手多国籍保険会社で働いています
+** 当社はデジタル変革の真っ最中です
+** 業務の近代化と新技術の活用を検討しています
+* 小規模なチームに次の業務を依頼しました:
+** 保険金請求の現在の処理方法を確認する
+** 改善の可能性についてアドバイスを提供する
+* そのチームは現在非常に小規模です (約 4 人)
+** 調査結果は取締役会に提示されます
+** 説得力があれば、チームには推奨事項を実施するためのリソースが与えられます
+* この章の次のセクションは、取締役会に提示された資料です
 
