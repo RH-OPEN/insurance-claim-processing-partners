@@ -1,19 +1,22 @@
 = Accident Recognition
 include::_attributes.adoc[]
 
-Now that we have retrained our model we can test it against some sample images.
+モデルを再トレーニングしたので、サンプル画像に対してテストできます。
 
-We have converted our model to onnx format and placed a copy within an S3 bucket.  We will test this version against some sample test images.
+モデルを onnx 形式に変換し、コピーを S3 バケット内に配置しました。このバージョンをサンプルテスト画像に対してテストします。
 
-Using the re-trained model, we will see that we are able to identify a severe car crash with 88% certainty, like in the below picture.
+再トレーニングしたモデルを使用すると、以下の画像のように、88% の確率で深刻な自動車事故を識別できることがわかります。
 
 [.bordershadow]
+
 image::04/retrained-model-results.png[retrained modelresults]
 
-To test the model yourself:
+モデルを自分でテストするには:
 
-- In your workbench, navigate to the folder `insurance-claim-processing/lab-materials/04`.
-- Look for (and open) the notebook called `04-04-accident-recog.ipynb`
-- Execute the cells of the notebook.
+- ワークベンチで、フォルダー `insurance-claim-processing/lab-materials/04` に移動します。
 
-Once you complete this notebook, you can go back to check `03-03-information-extraction.ipynb` and then move onto next lab whcih is `04-05-model-serving.ipynb`.
+- `04-04-accident-recog.ipynb` というノートブックを探して開きます。
+
+- ノートブックのセルを実行します。
+
+このノートブックを完了したら、`03-03-information-extraction.ipynb` に戻って確認し、次のラボである `04-05-model-serving.ipynb` に進むことができます。
