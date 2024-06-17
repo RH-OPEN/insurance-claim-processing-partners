@@ -19,7 +19,7 @@ asciidoc:
     minio-user: minio
     minio-pass: minio123
     minio-endpoint: http://minio.ic-shared-minio.svc.cluster.local:9000/
-    git-clone-repo-url: https://github.com/ritzshah/insurance-claim-processing-partners.git
+    git-clone-repo-url: https://github.com/RH-OPEN/insurance-claim-processing-partners.git
     git-clone-repo-branch: main
     user: userX
     password: openshift
