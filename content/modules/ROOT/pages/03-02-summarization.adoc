@@ -1,10 +1,10 @@
 = Text Summarization
 include::_attributes.adoc[]
 
-As part of our claim processing, we want to summarize the text of a claim. In the next notebook we will investigate how the LLM can be used to do this task.
+請求処理の一環として、請求のテキストを要約します。次のノートブックでは、LLM を使用してこのタスクを実行する方法を調べます。
 
-From the `insurance-claim-processing/lab-materials/03` folder, please open the notebook called `03-02-summarization.ipynb` and follow the instructions.
+`insurance-claim-processing/lab-materials/03` フォルダーから、`03-02-summarization.ipynb` というノートブックを開き、指示に従ってください。
 
-Kindly note that we are using cpus instead of gpus and so output rendered from LLM will be little slower than expected, but the focus is more on the functionality and what can be achieved from OpenShift AI. Note that it takes 2 to 4 mints to get the summary per claim, there are two such claims.
+GPU ではなく CPU を使用しているため、LLM からレンダリングされる出力は予想よりも少し遅くなりますが、機能と OpenShift AI で実現できることに重点が置かれています。請求ごとに要約を取得するには 2 ～ 4 分かかることに注意してください。このような請求は 2 件あります。
 
-When done, you can close the notebook and head to the next page. 
+完了したら、ノートブックを閉じて次のページに進むことができます。
