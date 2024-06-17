@@ -1,56 +1,57 @@
 = Model Retraining
 include::_attributes.adoc[]
 
-To retrain the YOLO model we need a prepared dataset of car images with moderate and severe accident labels.  We have such a dataset (from https://universe.roboflow.com/accident-detection-ffdrf/accident-detection-8dvh5/dataset/1[RoboFlow,window=_blank] ) that has annotated images and has split them into training and validation datasets.  We will use this training set to retrain our current YOLO model.
+YOLO モデルを再トレーニングするには、中程度および重度の事故ラベルが付いた車の画像の準備されたデータセットが必要です。このようなデータセット (https://universe.roboflow.com/accident-detection-ffdrf/accident-detection-8dvh5/dataset/1[RoboFlow,window=_blank] から) があり、画像に注釈が付けられ、トレーニング データセットと検証データセットに分割されています。このトレーニング セットを使用して、現在の YOLO モデルを再トレーニングします。
 
 [.bordershadow]
 image::04/roboflow-test-images.png[roboflow images]
 
-== Our training data
+== トレーニング データ
 
 [%collapsible]
 ====
-1. The encode classes of objects we want to teach our model to detect is 0-'moderate' and 1-'severe'.
-2. We have created a folder for the dataset (data) and have have 2 subfolders in it: 'train' and 'valid'.  Within each subfolder we have created 2 subfolders:  'images' and 'labels'.
-3. Each image has an annotation text file in the 'labels' subfolder. The annotation text files have the same names as the image files.
+1. モデルに検出するように教えたいオブジェクトのエンコード クラスは、0 - 'moderate' と 1 - 'severe' です。
+2. データセット (data) 用のフォルダーを作成し、その中に 'train' と 'valid' の 2 つのサブフォルダーがあります。各サブフォルダ内に、「images」と「labels」の 2 つのサブフォルダを作成しました。
+3. 各画像の「labels」サブフォルダには注釈テキスト ファイルがあります。注釈テキスト ファイルの名前は画像ファイルと同じです。
 ====
+次のトレーニング データ セットを用意しました。これは zip ファイルとして提供され、S3 バケットにあります: `accident-sample.zip` (このラボではモデルを完全に再トレーニングする時間がないため、トレーニング データ セットのサンプルを使用します)。
 
-We have provided the following training data set, available as a zip file, and located in an S3 bucket: `accident-sample.zip` (as we don,t have time in this Lab to fully retrain the model, we will use a sample of the training data set).
+- 実行中のワークベンチで、フォルダ `insurance-claim-processing/lab-materials/04` に移動します。
+- `04-03-model-retraining.ipynb` というノートブックを探して開きます。
+- ノートブックのセルを実行します。
 
-- In your running workbench, navigate to the folder `insurance-claim-processing/lab-materials/04`.
-- Look for (and open) the notebook called `04-03-model-retraining.ipynb`
-- Execute the cells of the notebook.
-
-== Interpreting the Model re-Training Results
+== モデルの再トレーニング結果の解釈
 [%collapsible]
 ====
-The following training run shows the results for the full dataset.
+次のトレーニング実行では、完全なデータセットの結果が表示されます。
 
-Let's start by understanding what an 'epoch' is. Machine learning models are trained with specific datasets passed through the algorithm. Each time a dataset passes through an algorithm, it is said to have completed an epoch. Therefore, epoch, in machine learning, refers to the one entire passing of training data through the algorithm
+まず、「エポック」とは何かを理解しましょう。機械学習モデルは、アルゴリズムに渡される特定のデータセットを使用してトレーニングされます。データセットがアルゴリズムを通過するたびに、エポックが完了したとみなされます。したがって、機械学習におけるエポックとは、トレーニング データがアルゴリズムを通過する 1 回全体を指します。
 
-In the training run below you can see a training run of 7 epochs with a batch size of 32 (meaning 32 images were analyzed simultaneously), that were set through the following code snippet:
+以下のトレーニング実行では、バッチ サイズが 32 (つまり、32 枚の画像が同時に分析された) の 7 つのエポックのトレーニング実行を確認できます。これは、次のコード スニペットによって設定されました。
+
 results = model.train(data='./datasets/accident-full/data.yaml', epochs=7, imgsz=640, batch=32)
 
-In the training run, each epoch shows a summary for both the training and validation phases: lines 1 and 2 show results of the training phase and lines 3 and 4 show the results of the validation phase for each epoch.
+トレーニング実行では、各エポックにトレーニング フェーズと検証フェーズの両方の概要が表示されます。行 1 と 2 にはトレーニング フェーズの結果が表示され、行 3 と 4 には各エポックの検証フェーズの結果が表示されます。
 
-image::04/model-retraining-summary.png[retraining summary]
+image::04/model-retraining-summary.png[再トレーニングの概要]
 
-The training phase includes a calculation of the amount of error in a loss function, so the most valuable metrics here are box_loss and cls_loss:
+トレーニング フェーズには損失関数のエラー量の計算が含まれるため、ここで最も重要なメトリックは box_loss と cls_loss です。
 
-* box_loss shows the amount of errors in detected bounding boxes.
-* cls_loss shows the amount of errors in detected object classes.
+* box_loss は、検出された境界ボックスのエラー量を示します。
 
-If the model really learns something from the data, we should see that these values decrease from epoch to epoch. +
-In the previous screenshot the box_loss decreased from 1.219 on the first epoch to 0.8386 in the last, and the cls_loss decreased from 1.875 to 0.9001.
+* cls_loss は、検出されたオブジェクト クラスのエラー量を示します。
 
-The other valuable quality metric is mAP50-95, which is Mean Average Precision. If the model learns and improves, the precision should grow from epoch to epoch. +
-In the previous screenshot mAP50-95 increased from 0.423 (epoch1) to 0.755 (epoch7).
+モデルがデータから実際に何かを学習した場合、これらの値はエポックごとに減少するはずです。+
+前のスクリーンショットでは、box_loss は最初のエポックの 1.219 から最後のエポックの 0.8386 に減少し、cls_loss は 1.875 から 0.9001 に減少しました。
 
-We can also see that throughout the training, the GPU was used, with a memory consumption of a little bit more than 13GB.
+もう 1 つの重要な品質メトリックは、平均精度である mAP50-95 です。モデルが学習して改善した場合、精度はエポックごとに増加するはずです。 +
+前のスクリーンショットでは、mAP50-95 が 0.423 (epoch1) から 0.755 (epoch7) に増加しました。
 
-If after the last epoch you did not get acceptable precision, you can increase the number of epochs and run the training again. Also, you can tune other parameters like batch, lr0, lrf or change the optimizer you're using.
+トレーニング全体を通じて GPU が使用され、メモリ消費量が 13 GB を少し超えたこともわかります。
 
-During training we export the trained model, after each epoch, to the /runs/detect/train/weights/last.pt file and the model with the highest precision to the /runs/detect/train/weights/best.pt file. So, after training is finished, you can get the best.pt file to use in production.
+最後のエポック後に許容できる精度が得られなかった場合は、エポック数を増やしてトレーニングを再度実行できます。また、batch、lr0、lrf などの他のパラメータを調整したり、使用しているオプティマイザーを変更したりすることもできます。
 
-Note:  In real world problems, you need to run many more epochs than we have shown here, and be prepared to wait hours or days until training finishes, and not a mere 16 minutes as we did in this example.
+トレーニング中は、各エポック後にトレーニング済みのモデルを /runs/detect/train/weights/last.pt ファイルにエクスポートし、最も精度の高いモデルを /runs/detect/train/weights/best.pt ファイルにエクスポートします。そのため、トレーニングが終了したら、本番環境で使用できる best.pt ファイルを取得できます。
+
+Note:  実際の問題では、ここで示したよりも多くのエポックを実行する必要があり、この例のようにわずか 16 分ではなく、トレーニングが完了するまで数時間または数日待つ準備をする必要があります。
 ====
