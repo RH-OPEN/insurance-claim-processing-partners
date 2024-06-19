@@ -3,7 +3,7 @@ include::_attributes.adoc[]
 
 このプロトタイプの一部として、YOLOv8 モデルの使用を調査しました。
 
-このモデルは、https://www.yolov8.com[yolov8,window=_blank] でオンラインで見つけてダウンロードできます。
+このモデルは、 https://www.yolov8.com[yolov8,window=_blank] でオンラインで見つけてダウンロードできます。
 
 まず、すぐに使用できる機能を確認します。次に、より専門的な作業を実行できるように微調整します。モデルの新しいカスタマイズされたバージョンができたら、OpenShift AI Model Serving にデプロイします。それが完了したら、クエリを送信します。
 
