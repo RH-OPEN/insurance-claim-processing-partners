@@ -3,7 +3,7 @@ include::_attributes.adoc[]
 
 この間一緒に使用した資料が役に立ち、インテリジェント アプリケーションに何が含まれるかについて理解を深めていただければ幸いです。
 
-コンテンツに関する https://github.com/ritzshah/insurance-claim-processing-partners/issues[issues,window=_blank] に気付いた場合や、https://github.com/ritzshah/insurance-claim-processing-partners/pulls[pull request,window=_blank] を送信したい場合は、ぜひお知らせください。
+コンテンツに関する https://github.com/ritzshah/insurance-claim-processing-partners/issues[issues,window=_blank] に気付いた場合や、 https://github.com/ritzshah/insurance-claim-processing-partners/pulls[pull request,window=_blank] を送信したい場合は、ぜひお知らせください。
 
 == 謝辞
 
