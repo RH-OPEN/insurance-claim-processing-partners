@@ -1,7 +1,7 @@
 = Model Retraining
 include::_attributes.adoc[]
 
-YOLO モデルを再トレーニングするには、中程度および重度の事故ラベルが付いた車の画像の準備されたデータセットが必要です。このようなデータセット (https://universe.roboflow.com/accident-detection-ffdrf/accident-detection-8dvh5/dataset/1[RoboFlow,window=_blank] から) があり、画像に注釈が付けられ、トレーニング データセットと検証データセットに分割されています。このトレーニング セットを使用して、現在の YOLO モデルを再トレーニングします。
+YOLO モデルを再トレーニングするには、中程度および重度の事故ラベルが付いた車の画像の準備されたデータセットが必要です。このようなデータセット (https://universe.roboflow.com/accident-detection-ffdrf/accident-detection-8dvh5/dataset/1[RoboFlow,window=_blank] から) があり、画像はアノテーションされ、トレーニング データセットと検証データセットに分割されています。このトレーニング セットを使用して、現在の YOLO モデルを再トレーニングします。
 
 [.bordershadow]
 image::04/roboflow-test-images.png[roboflow images]
