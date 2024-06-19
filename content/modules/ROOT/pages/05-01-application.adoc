@@ -60,6 +60,6 @@ image::05/trust-vscode.png[]
 [.bordershadow]
 image::05/app-code.png[]
 
-Of course, this is a complete VSCode environment, so you can configure it in the same way as you would do for a local VSCode installation. You can install extensions that will be persisted when you stop and restart the Workbench, you can configure your own keybindings, etc.
+もちろん、これは完全な VSCode 環境であるため、ローカルの VSCode インストールと同じ方法で構成できます。ワークベンチを停止して再起動したときに永続化される拡張機能をインストールしたり、独自のキーバインドを構成したりできます。
 
-The application has already been built as a container image that we are now ready to deploy using GitOps. You can head to the next section.
+アプリケーションはすでにコンテナー イメージとして構築されており、GitOps を使用してデプロイする準備が整いました。次のセクションに進むことができます。
