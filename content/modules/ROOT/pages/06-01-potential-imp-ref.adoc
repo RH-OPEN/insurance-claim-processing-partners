@@ -3,7 +3,7 @@ include::_attributes.adoc[]
 
 == ラボ資料へ
 
-このラボに関するフィードバックがある場合は、https://github.com/ritzshah/insurance-claim-processing-partners/issues[Issues,window=_blank] および https://github.com/ritzshah/insurance-claim-processing-partners/pulls[Pull Requests,window=_blank] を使用してください。
+このラボに関するフィードバックがある場合は、 https://github.com/ritzshah/insurance-claim-processing-partners/issues[Issues,window=_blank] および https://github.com/ritzshah/insurance-claim-processing-partners/pulls[Pull Requests,window=_blank] を使用してください。
 
 ただし、ラボのこのセクションは、**ラボへの** 改善と改良を目的としたものではありません。代わりに、次の内容について説明します...
 
@@ -46,6 +46,6 @@ include::_attributes.adoc[]
 ** 不足している詳細を尋ねるだけかもしれません。
 ** または、請求が承認されたか拒否されたかを知らせるかもしれません。
 * ただし、これを行うには、LLM は保険会社がそれらの決定を行うために使用するポリシーを認識している必要があります。
-** これは、https://research.ibm.com/blog/retrieval-augmented-generation-RAG[RAG,window=_blank] アプローチの興味深いユースケースになる可能性があります。
+** これは、 https://research.ibm.com/blog/retrieval-augmented-generation-RAG[RAG,window=_blank] アプローチの興味深いユースケースになる可能性があります。
 
 ====
