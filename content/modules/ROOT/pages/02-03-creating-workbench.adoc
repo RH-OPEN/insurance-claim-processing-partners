@@ -57,9 +57,18 @@ image::02/git-clone-1.png[]
 +
 [.bordershadow]
 image::02/git-clone-2.png[]
-** 再度Gitアイコンをクリックし"translation"ブランチを選択します:
+** 表示されるフォルダーのうち、"insurance-claim-processing-partners"をダブルクリックして内容を表示します:
 +
 [.bordershadow]
-image::02/git-branch.png[]
+image::02/git-branch1.png[]
+** 左のアイコンから再度Gitアイコンをクリックし"Current Branch"の右にある三角マークをクリックします:
++
+[.bordershadow]
+image::02/git-branch2.png[]
+** 表示されたブランチの中から、"translation"をクリックして"Current Branch"が”translation”に切り替わることを確認します:
++
+[.bordershadow]
+image::02/git-branch3.png[]
+** 左のアイコンの最上部のフォルダーアイコンをクリックします:
 
 この時点で、プロジェクトは、私たちがやりたい作業を行う準備が整いました。
