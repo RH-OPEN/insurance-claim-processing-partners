@@ -57,5 +57,9 @@ image::02/git-clone-1.png[]
 +
 [.bordershadow]
 image::02/git-clone-2.png[]
+** 再度Gitアイコンをクリックし"translation"ブランチを選択します:
++
+[.bordershadow]
+image::02/git-branch.png[]
 
 この時点で、プロジェクトは、私たちがやりたい作業を行う準備が整いました。
