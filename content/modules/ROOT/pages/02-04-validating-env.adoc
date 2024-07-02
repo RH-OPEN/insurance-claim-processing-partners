@@ -5,7 +5,7 @@ include::_attributes.adoc[]
 
 ワークベンチで:
 
-. 左側のナビゲーション メニューで、`insurance-claim-processing/lab-materials/02` というフォルダーに移動します。
+. 左側のナビゲーション メニューで、`insurance-claim-processing-partners/lab-materials/02` というフォルダーに移動します。
 
 . `02-04-validating.ipynb` というノートブックを開きます。
 
