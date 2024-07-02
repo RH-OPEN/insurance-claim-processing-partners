@@ -16,7 +16,7 @@ image::04/roboflow-test-images.png[roboflow images]
 ====
 次のトレーニング データ セットを用意しました。これは zip ファイルとして提供され、S3 バケットにあります: `accident-sample.zip` (このラボではモデルを完全に再トレーニングする時間がないため、トレーニング データ セットのサンプルを使用します)。
 
-- 実行中のワークベンチで、フォルダ `insurance-claim-processing/lab-materials/04` に移動します。
+- 実行中のワークベンチで、フォルダ `insurance-claim-processing-partners/lab-materials/04` に移動します。
 - `04-03-model-retraining.ipynb` というノートブックを探して開きます。
 - ノートブックのセルを実行します。
 
