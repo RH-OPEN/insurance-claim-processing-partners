@@ -3,7 +3,7 @@ include::_attributes.adoc[]
 
 請求処理の一環として、請求のテキストから情報を抽出したいと考えています。次のノートブックでは、LLM を使用してこのタスクを実行する方法を調べます。
 
-`insurance-claim-processing/lab-materials/03` フォルダーから、`03-03-information-extraction.ipynb` というノートブックを開き、指示に従ってください。
+`insurance-claim-processing-partners/lab-materials/03` フォルダーから、`03-03-information-extraction.ipynb` というノートブックを開き、指示に従ってください。
 
 GPU ではなく CPU を使用しているため、LLM からの出力は予想よりも少し遅くなりますが、機能と OpenShift AI で実現できることに重点が置かれています。請求ごとに LLM からの出力を取得するには、少なくとも 2 ～ 4 分かかります。請求ごとに LLM に求められるのは、感情、場所、時間の 3 つです。したがって、請求処理には約 6 分かかり、処理する請求は 2 件です。
 
