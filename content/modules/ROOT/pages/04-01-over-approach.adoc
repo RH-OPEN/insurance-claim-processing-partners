@@ -13,7 +13,7 @@ include::_attributes.adoc[]
 
 image::04/sample-car-image.png[車の画像]
 
-- 実行中のワークベンチで、フォルダー `insurance-claim-processing/lab-materials/04` に移動します。
+- 実行中のワークベンチで、フォルダー `insurance-claim-processing-partners/lab-materials/04` に移動します。
 
 - `04-01-over-approach.ipynb` というノートブックを探して開きます
 - ノートブックのセルを実行して、何が起こっているか理解していることを確認します
