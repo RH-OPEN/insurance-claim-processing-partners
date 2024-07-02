@@ -3,7 +3,7 @@ include::_attributes.adoc[]
 
 請求処理の一環として、請求のテキストを要約します。次のノートブックでは、LLM を使用してこのタスクを実行する方法を調べます。
 
-`insurance-claim-processing/lab-materials/03` フォルダーから、`03-02-summarization.ipynb` というノートブックを開き、指示に従ってください。
+`insurance-claim-processing-partners/lab-materials/03` フォルダーから、`03-02-summarization.ipynb` というノートブックを開き、指示に従ってください。
 
 GPU ではなく CPU を使用しているため、LLM からレンダリングされる出力は予想よりも少し遅くなりますが、機能と OpenShift AI で実現できることに重点が置かれています。請求ごとに要約を取得するには 2 ～ 4 分かかることに注意してください。このような請求は 2 件あります。
 
