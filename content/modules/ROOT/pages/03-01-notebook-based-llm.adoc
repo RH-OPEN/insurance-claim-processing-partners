@@ -3,7 +3,7 @@ include::_attributes.adoc[]
 
 この演習では、ノートブックを使用して LLM の使用方法を調べます。
 
-`insurance-claim-processing/lab-materials/03` フォルダーから、`03-01-nb-llm-example.ipynb` というノートブックを開き、指示に従ってください。
+`insurance-claim-processing-partners/lab-materials/03` フォルダーから、`03-01-nb-llm-example.ipynb` というノートブックを開き、指示に従ってください。
 
 GPU ではなく CPU を使用しているため、LLM からレンダリングされる出力は予想よりも少し遅くなりますが、機能と OpenShift AI で実現できることに重点が置かれています。
 
