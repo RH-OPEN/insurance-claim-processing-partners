@@ -162,7 +162,7 @@ accident/
 image::04/deploy-a-model.png[]
 
 * [**デプロイ**] をクリックします。
-* モデルが正常にデプロイされると、15 ～ 30 秒後にステータスが緑色で表示されます。
+* モデルが正常にデプロイされると、2 ～ 3 分後にステータスが緑色で表示されます。
 +
 [.bordershadow]
 image::04/model-deployed-success.png[]
