@@ -65,7 +65,7 @@ image::02/git-branch1.png[]
 +
 [.bordershadow]
 image::02/git-branch2.png[]
-** 表示されたブランチの中から、"translation"をクリックして"Current Branch"が”translation”に切り替わることを確認します:
+** 表示されたブランチの中から、"translation"ブランチ(origin/translation)をクリックして"Current Branch"が”translation”に切り替わることを確認します:
 +
 [.bordershadow]
 image::02/git-branch3.png[]
