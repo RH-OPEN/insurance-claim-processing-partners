@@ -20,7 +20,7 @@ image::05/01-openshift-console.png[]
 [.bordershadow]
 image::05/web-term-1.png[]
 
-- 次に、既存のプロジェクトを選択して [開始] をクリックします:
+- 次に、既存のプロジェクトを選択して [**開始**]/[**Start**] をクリックします:
 +
 [.bordershadow]
 image::05/web-term-2.png[]

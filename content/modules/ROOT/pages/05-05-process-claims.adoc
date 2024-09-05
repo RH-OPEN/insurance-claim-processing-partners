@@ -31,12 +31,12 @@ NOTE: フォルダーには、参照用に Elyra バージョンのパイプラ�
 == 新しい PVC を作成する
 
 パイプラインを実行する前に、中間ファイルと結果を格納するために使用する PVC を作成する必要があります。 +
-OpenShift コンソールに移動し、[ストレージ] -> [PersistentVolumeClaims] に移動します。
+OpenShift コンソールに移動し、[**ストレージ**]/[**Storage**] -> [PersistentVolumeClaims] に移動します。
 
 [.bordershadow]
 image::05/05-PVC.png[PVC に移動]
 
-正しいプロジェクト (ユーザー名) にいることを確認してから、[Create PersistentVolumeClaim] を押します。
+正しいプロジェクト (ユーザー名) にいることを確認してから、[**PersistentVolumeClaimの作成**]/[**Create PersistentVolumeClaim**] を押します。
 
 [.bordershadow]
 image::05/05-create-pvc.png[PVC を作成]
@@ -70,24 +70,24 @@ Shared access (RWX)
 [.bordershadow]
 image::05/05-PVC-settings.png[PVC settings]
 
-次に、「作成」を押します。
+次に、[**作成済み**]/[**Create**] を押します。
 
 == パイプラインを実行する
 パイプラインを実行するには、まず「process_claims.yaml」ファイルをローカルにダウンロードします。 +
-次に、データ サイエンス プロジェクトに移動して、「パイプラインのインポート」を押します。
+次に、データ サイエンス プロジェクトの *Pipelines* タブに移動して、[**Import pipeline**] を押します。
 
 [.bordershadow]
 image::05/05-import-pipeline-button.png[パイプラインのインポート]
 
-次に、ドラッグ アンド ドロップするか、「アップロード」ボタンを使用して、process_claims.yaml ファイルをアップロードします。次に、パイプラインに「Process Claims Pipeline」などの適切な名前を付けます。 +
+次に、ドラッグ アンド ドロップするか、[**Upload**] ボタンを使用して、process_claims.yaml ファイルをアップロードします。次に、パイプラインに「Process Claims Pipeline」などの適切な名前を付けます。 +
 その後、次のようになります。
 
 [.bordershadow]
 image::05/05-imported-pipeline.png[インポートされたパイプライン]
 
-「パイプラインのインポート」を押すと、パイプラインの下にポップアップ表示されます。
+[**Import pipeline**] を押すと、パイプラインの下にポップアップ表示されます。
 
-次に、右側の設定に移動して「実行の作成」を押し、追加したパイプラインの新しい実行を作成します。パイプラインの実行は合計で 8 ～ 10 分かかる可能性があるため、パイプラインの実行中に、LLM ポッド ログ (管理者ユーザーとして) とパイプライン実行およびタスク ログ (ユーザー 1 として) を表示できます。OpenShiftAI UI を表示できます。
+次に、右側の設定に移動して [**Create run**] を押し、追加したパイプラインの新しい実行を作成します。パイプラインの実行は合計で 8 ～ 10 分かかる可能性があるため、パイプラインの実行中に、LLM ポッド ログ (管理者ユーザーとして) とパイプライン実行およびタスク ログ (ユーザー 1 として) を表示できます。OpenShiftAI UI を表示できます。
 
 [.bordershadow]
 image::05/05-create-run.png[create run]
@@ -126,9 +126,9 @@ http://modelmesh-serving.{user}:8008
 [.bordershadow]
 image::05/05-run-settings-create-pipeline.png[実行設定]
 
-claim_id を変更すると、処理するクレームを変更できます。0 に設定すると、未処理のクレームがすべて処理されます。
+*claim_id* を変更すると、処理するクレームを変更できます。0 に設定すると、未処理のクレームがすべて処理されます。
 
-「作成」を押して、実行を確認します。
+[**作成済み**]/[**Create**] を押して、実行を確認します。
 
 == 結果を確認する
 

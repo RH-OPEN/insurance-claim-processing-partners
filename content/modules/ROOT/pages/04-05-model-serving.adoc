@@ -8,7 +8,7 @@ include::_attributes.adoc[]
 
 == データ接続の作成
 
-* データ サイエンス プロジェクトで、共有 minio を参照するデータ接続を作成します。
+* データ サイエンス プロジェクトの *Data connections* タブで、共有 minio を参照するデータ接続を作成します。
 * 入力する必要がある情報は次のとおりです。
 ** Name:
 [.lines_space]
@@ -54,9 +54,9 @@ image::04/model-data-connection.png[モデル接続]
 
 == モデル サーバーを作成する
 
-プロジェクトでモデル サーバーを作成します。`Multi-modelserving platform` を使用して、`Add model server` を選択します
+プロジェクトでモデル サーバーを作成します。 *Models* タブの `Multi-modelserving platform` の `Add model server` を選択します
 
-* **Add model server** をクリックします
+* [**Add model server**] をクリックします
 +
 [.bordershadow]
 image::04/add-model-server.png[]
@@ -112,13 +112,13 @@ unchecked
 [.bordershadow]
 image::04/add-model-server-config.png[]
 
-* **追加** をクリックすると、モデル サーバーを作成できます。
+* [**Add**] をクリックすると、モデル サーバーを作成できます。
 
 == モデルのデプロイ
 
-プロジェクトの **モデルとモデル サーバー** で、**モデルのデプロイ** を選択します。
+プロジェクトの *Models* タブで、 `Deploy model` を選択します。
 
-* **モデルのデプロイ** をクリックします
+* [**Deploy model**] をクリックします
 +
 [.bordershadow]
 image::04/select-deploy-model.png[]
@@ -161,7 +161,7 @@ accident/
 [.bordershadow]
 image::04/deploy-a-model.png[]
 
-* [**デプロイ**] をクリックします。
+* [**Deploy**] をクリックします。
 * モデルが正常にデプロイされると、2 ～ 3 分後にステータスが緑色で表示されます。
 +
 [.bordershadow]
@@ -174,7 +174,7 @@ image::04/model-deployed-success.png[]
 モデルが提供されたら、クエリ可能なエンドポイントとして使用できます。モデルにリクエストを送信して結果を取得します。以前のノートブックベースのバージョンとは異なり、これはクラスター内で作業しているすべての人に適用されます。同僚でもアプリケーションでもかまいません。
 
 * まず、モデル サーバーの URL を取得する必要があります。
-* これを行うには、[**推論エンドポイント**] 列の [**内部サービス**] リンクをクリックします。
+* これを行うには、 *Interface endpoint* 列の *Internal Service* リンクをクリックします。
 * ポップアップに、モデル サーバーの URL がいくつか表示されます。
 +
 [.bordershadow]
