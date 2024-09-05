@@ -22,7 +22,7 @@ include::_attributes.adoc[]
 
 == プロジェクトの作成
 
-* まず、OpenShift AI ダッシュボード アプリケーションで、左側の *Data Science Projects* メニューに移動します:
+* まず、OpenShift AI ダッシュボード アプリケーションで、左側の [**Data Science Projects**] メニューに移動します:
 +
 [.bordershadow]
 image::02/02-02-ds-proj-nav.png[]
