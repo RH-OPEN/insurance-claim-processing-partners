@@ -4,12 +4,12 @@ include::_attributes.adoc[]
 == ワークベンチを起動
 
 * データ接続とパイプライン サーバーが完全に作成されたら
-* ワークベンチを作成します
+* *Workbenches* タブから [**Create workbench**] をクリックして、ワークベンチを作成します
 +
 [.bordershadow]
 image::02/02-03-create-wb.png[]
 * 次の特性があることを確認します:
-** Choose a name for it, like: `My Workbench`
+** Name: `My Workbench`
 ** Image Selection: `CUSTOM - Insurance Claim Processing Lab Workbench`
 ** Container Size: `Standard`
 ** Accelerator: `None`
@@ -30,7 +30,7 @@ image::02/02-03-open-link.png[]
 [.bordershadow]
 image::02/02-02-accept.png[]
 
-* 同意します
+* [**Allow selected permissions**] をクリックして、同意します
 * 次の画面が表示されます:
 +
 [.bordershadow]

@@ -22,7 +22,7 @@ include::_attributes.adoc[]
 
 == プロジェクトの作成
 
-* まず、OpenShift AI ダッシュボード アプリケーションで、左側の [データ サイエンス プロジェクト] メニューに移動します:
+* まず、OpenShift AI ダッシュボード アプリケーションで、左側の [Data Science Projects] メニューに移動します:
 +
 [.bordershadow]
 image::02/02-02-ds-proj-nav.png[]
@@ -33,7 +33,7 @@ image::02/02-02-ds-proj-nav.png[]
 +
 重要: 割り当てられたユーザーは {user} です。間違えると後で問題が発生します
 * リソース名は変更しないでください
-* 必要に応じて、プロジェクトの説明に姓と名を入力します。
+* 必要に応じて、プロジェクトの説明に姓と名を入力します
 * 次のようになります:
 +
 [.bordershadow]
@@ -44,7 +44,8 @@ image::02/02-02-create-project.png[]
 == パイプライン サーバーのデータ接続を作成します
 
 * ここでは、目的に応じて、シンプルなオブジェクト ストレージとして機能するように、クラスターに Minio のインスタンスをデプロイしました。
-* それを指す **データ接続を追加** する必要があります。
+* *Data connections* タブに移動して、 [**Add data connection**] する必要があります。
+
 +
 [.bordershadow]
 image::02/02-02-add-dc.png[]
@@ -96,14 +97,14 @@ image::02/data-connection.png[]
 
 == パイプライン サーバーの作成
 
-ワークベンチを作成する前に、パイプライン サーバーを作成することを強くお勧めします。それでは、今すぐ作成しましょう!　`Create Pipeline`　ではなく　`Configure Pipeline`　が表示される場合があります。それを選択して、minio エンドポイント　`http://minio.ic-shared-minio.svc.cluster.local:9000/`　とバケット　`{user}`　を入力します。ユーザー名とパスワードも入力する必要がある場合は、それぞれ　`minio`　と　`minio123`　です。
+ワークベンチを作成する前に、パイプライン サーバーを作成することを強くお勧めします。それでは、今すぐ作成しましょう!　*Pipelines* タブに移動します。 `Create Pipeline`　ではなく　`Configure Pipeline`　が表示される場合があります。それを選択して、minio エンドポイント　`http://minio.ic-shared-minio.svc.cluster.local:9000/`　とバケット　`{user}`　を入力します。ユーザー名とパスワードも入力する必要がある場合は、それぞれ　`minio`　と　`minio123`　です。
 
-* データ サイエンス プロジェクト (DSP) で、[**Create a pipeline Server**] をクリックします。
+* データ サイエンス プロジェクト (DSP) の *Pipelines* タブで、[**Create pipeline Server**] または[**Configure pipeline Server**] をクリックします。
 +
 [.bordershadow]
 image::02/02-02-pipelineserver01.png[]
 
-* 以前に作成したデータ接続 (**Shared Minio - pipelines**) を選択し、[**Configure**] ボタンをクリックします。
+* 以前に作成したデータ接続 (**Shared Minio - pipelines**) を選択し、[**Configure pipeline server**] ボタンをクリックします。
 +
 [.bordershadow]
 image::02/02-02-pipelineserver02.png[]
@@ -115,4 +116,4 @@ image::02/02-02-pipelineserver03.png[]
 
 この時点で、パイプライン サーバーの準備が整い、デプロイされています。
 
-重要: 画面の準備が整うまで **待​​つ** 必要があります。まだ回転している場合は、完了するまでお待ちください。パイプライン サーバーの準備が **整う前に** ワークベンチの作成を続行すると、ワークベンチはパイプラインを送信できなくなります。
+重要: 画面の準備が整うまで**待​​つ**必要があります。まだ回転している場合は、完了するまでお待ちください。パイプライン サーバーの準備が**整う前に**ワークベンチの作成を続行すると、ワークベンチはパイプラインを送信できなくなります。
