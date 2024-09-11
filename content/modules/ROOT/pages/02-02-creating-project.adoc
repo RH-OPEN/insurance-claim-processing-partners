@@ -104,7 +104,7 @@ image::02/data-connection.png[]
 [.bordershadow]
 image::02/02-02-pipelineserver01.png[]
 
-* 以前に作成したデータ接続 (**Shared Minio - pipelines**) を選択し、[**Configure pipeline server**] ボタンをクリックします。
+* 以前に作成したデータ接続 (**Shared Minio - pipelines**) と同じ内容(Access KeyとSecret Keyは、それぞれ　`minio`　と　`minio123`　、minio エンドポイント　`http://minio.ic-shared-minio.svc.cluster.local:9000/`　、Regionは `none` とバケット　`{user}`)を入力し、[**Configure pipeline server**] ボタンをクリックします。
 +
 [.bordershadow]
 image::02/02-02-pipelineserver02.png[]
