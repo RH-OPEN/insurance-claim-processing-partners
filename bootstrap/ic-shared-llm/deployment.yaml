@@ -67,10 +67,6 @@ spec:
           periodSeconds: 100
           successThreshold: 1
           failureThreshold: 3
-        lifecycle:
-            postStart:
-              exec:
-                command: [ "/bin/sh" ]
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
         volumeMounts:
