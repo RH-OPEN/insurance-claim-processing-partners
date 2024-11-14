@@ -9,28 +9,28 @@ spec:
       elements:
       - cluster: in-cluster
         name: ic-shared-minio-app
-        repoURL: https://github.com/ritzshah/insurance-claim-processing-partners.git
-        targetRevision: main
+        repoURL: https://github.com/RH-OPEN/insurance-claim-processing-partners.git
+        targetRevision: translation2
         path: bootstrap/ic-shared-minio
       - cluster: in-cluster
         name: ic-shared-database-app
-        repoURL: https://github.com/ritzshah/insurance-claim-processing-partners.git
-        targetRevision: main
+        repoURL: https://github.com/RH-OPEN/insurance-claim-processing-partners.git
+        targetRevision: translation2
         path: bootstrap/ic-shared-database
       - cluster: in-cluster
         name: ic-shared-llm-app
-        repoURL: https://github.com/ritzshah/insurance-claim-processing-partners.git
-        targetRevision: main
+        repoURL: https://github.com/RH-OPEN/insurance-claim-processing-partners.git
+        targetRevision: translation2
         path: bootstrap/ic-shared-llm
       - cluster: in-cluster
         name: ic-shared-img-det
-        repoURL: https://github.com/ritzshah/insurance-claim-processing-partners.git
-        targetRevision: main
+        repoURL: https://github.com/RH-OPEN/insurance-claim-processing-partners.git
+        targetRevision: translation2
         path: bootstrap/ic-shared-img-det
       - cluster: in-cluster
         name: ic-rhoai-configuration
-        repoURL: https://github.com/ritzshah/insurance-claim-processing-partners.git
-        targetRevision: main
+        repoURL: https://github.com/RH-OPEN/insurance-claim-processing-partners.git
+        targetRevision: translation2
         path: bootstrap/ic-rhoai-configuration
   template:
     metadata:
