@@ -6,4 +6,5 @@ RUN pip install -U pip && pip install -r requirements.txt
 
 COPY model_server model_server
 
-ENTRYPOINT ["bash"]
+ENTRYPOINT ["deepsparse.server" "--task" "text-generation" "--integration" "openai" "--model_path" "zoo:llama2-7b-llama2_chat_llama2_pretrain-base_quantized
+"]
