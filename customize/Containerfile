@@ -8,4 +8,8 @@ COPY model_server model_server
 
 COPY app.py app.py
 
+COPY outputs.py outputs.py
+
+COPY protocol.py protocol.py
+
 ENTRYPOINT ["app.py", "--model", "zoo:llama2-7b-llama2_chat_llama2_pretrain-base_quantized", "--port", "8080"]

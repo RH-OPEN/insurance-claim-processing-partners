@@ -5,3 +5,4 @@ transformers
 datasets
 deepsparse[server,transformers]
 openai
+

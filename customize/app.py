@@ -675,8 +675,7 @@ if __name__ == "__main__":
         "--model",
         type=str,
         default=(
-            "zoo:nlg/text_generation/codegen_mono-350m/pytorch/huggingface"
-            "/bigpython_bigquery_thepile/base-none"
+            "zoo:llama2-7b-llama2_chat_llama2_pretrain-base_quantized"
         ),
         help="name or path of the huggingface model to use",
     )
@@ -697,7 +696,7 @@ if __name__ == "__main__":
     )
 
     parser.add_argument("--host", type=str, default="localhost", help="host name")
-    parser.add_argument("--port", type=int, default=8000, help="port number")
+    parser.add_argument("--port", type=int, default=8080, help="port number")
     parser.add_argument(
         "--allow-credentials", action="store_true", help="allow credentials"
     )
