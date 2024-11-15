@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: llm
-        image: ghcr.io/neuralmagic/deepsparse:v1.8.0
+        image: quay.io/rh-aiservices-bu/ollama-ubi9:0.1.30
         imagePullPolicy: Always
         env:
         - name: MODEL_ID
