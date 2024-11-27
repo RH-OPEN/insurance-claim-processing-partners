@@ -23,10 +23,10 @@ spec:
         targetRevision: translation2
         path: bootstrap/ic-shared-llm
       - cluster: in-cluster
-        name: deepsparse-text-generation
-        repoURL: https://github.com/nueda-rh/llm-on-openshift.git
-        targetRevision: main
-        path: llm-servers/deepsparse/gitops
+        name: ic-shared-llm-ds-app
+        repoURL: https://github.com/RH-OPEN/insurance-claim-processing-partners.git
+        targetRevision: translation2
+        path: bootstrap/ic-shared-llm-ds
       - cluster: in-cluster
         name: ic-shared-img-det
         repoURL: https://github.com/RH-OPEN/insurance-claim-processing-partners.git
