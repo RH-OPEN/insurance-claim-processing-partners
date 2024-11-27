@@ -26,10 +26,10 @@ spec:
         - resources:
             limits:
               cpu: '16'
-              memory: 64Gi
+              memory: 32Gi
             requests:
               cpu: '8'
-              memory: 32Gi
+              memory: 8Gi
           terminationMessagePath: /dev/termination-log
           name: server
           env:
