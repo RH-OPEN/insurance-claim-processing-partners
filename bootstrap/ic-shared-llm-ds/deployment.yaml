@@ -1,0 +1,75 @@
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: llm-ds
+  namespace: ic-shared-llm-ds
+  labels:
+    app: llm-ds
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: llm-ds
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: llm-ds
+    spec:
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      affinity: {}
+      terminationGracePeriodSeconds: 120
+      securityContext: {}
+      containers:
+        - resources:
+            limits:
+              cpu: '16'
+              memory: 64Gi
+            requests:
+              cpu: '8'
+              memory: 32Gi
+          terminationMessagePath: /dev/termination-log
+          name: server
+          env:
+            - name: HUGGING_FACE_HUB_TOKEN
+              value: ''
+          args: [
+            "--integration", "openai",
+            "--port", "8080",
+            "--task", "text_generation",
+            "--model_path", "zoo:mistral-7b-ultrachat200k_mistral_pretrain-pruned50_quantized"]
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            allowPrivilegeEscalation: false
+            seccompProfile:
+              type: RuntimeDefault
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: shm
+              mountPath: /dev/shm
+            - name: models-cache
+              mountPath: /opt/app-root/src/.cache
+          terminationMessagePolicy: File
+          image: 'quay.io/rh-aiservices-bu/deepsparse-openai-ubi9:0.2'
+      volumes:
+        - name: shm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 16Gi
+        - name: models-cache
+          persistentVolumeClaim:
+            claimName: models-cache
+      dnsPolicy: ClusterFirst
+  strategy:
+    type: Recreate
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600

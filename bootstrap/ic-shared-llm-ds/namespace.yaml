@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ic-shared-llm-ds
+  labels:
+    app: ic-shared-llm-ds
+    argocd.argoproj.io/managed-by: openshift-gitops
+  annotations:
+    openshift.io/display-name: "Shared DeepSparse LLM"
+    argocd.argoproj.io/sync-wave: "0"
